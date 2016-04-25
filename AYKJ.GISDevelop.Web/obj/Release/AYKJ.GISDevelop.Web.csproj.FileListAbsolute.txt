@@ -1,5 +1,0 @@
-E:\13-参与项目\石家庄安监局\源码20150715\AYKJ.GISDevelop.Web\bin\TestCab.CAB
-E:\13-参与项目\石家庄安监局\源码20150715\AYKJ.GISDevelop.Web\bin\AYKJ.GISDevelop.Web.dll
-E:\13-参与项目\石家庄安监局\源码20150715\AYKJ.GISDevelop.Web\bin\AYKJ.GISDevelop.Web.pdb
-E:\13-参与项目\石家庄安监局\源码20150715\AYKJ.GISDevelop.Web\obj\Release\AYKJ.GISDevelop.Web.dll
-E:\13-参与项目\石家庄安监局\源码20150715\AYKJ.GISDevelop.Web\obj\Release\AYKJ.GISDevelop.Web.pdb
