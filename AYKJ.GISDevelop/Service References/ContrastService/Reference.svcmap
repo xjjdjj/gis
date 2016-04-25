@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="99ce95e2-f2f3-4423-bd73-1ed10fdcff52" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4877/ContrastService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ContrastService.xsd" MetadataType="Schema" ID="309f37cf-37dc-423b-b953-786622ecf381" SourceId="1" SourceUrl="http://localhost:4877/ContrastService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ContrastService.wsdl" MetadataType="Wsdl" ID="c83cdc5e-5747-426a-9598-abefb2fc5158" SourceId="1" SourceUrl="http://localhost:4877/ContrastService.svc?wsdl" />
+    <MetadataFile FileName="ContrastService1.xsd" MetadataType="Schema" ID="522fed80-880c-49e7-ab6f-cc57d24d5a6e" SourceId="1" SourceUrl="http://localhost:4877/ContrastService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ContrastService1.wsdl" MetadataType="Wsdl" ID="4ce74b5b-89bf-4379-9cc1-d0414e856fb6" SourceId="1" SourceUrl="http://localhost:4877/ContrastService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ContrastService.disco" MetadataType="Disco" ID="b3f33523-f07c-40ba-ad8f-bbe33694c8ef" SourceId="1" SourceUrl="http://localhost:4877/ContrastService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

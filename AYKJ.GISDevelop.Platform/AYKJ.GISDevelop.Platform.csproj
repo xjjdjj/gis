@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D1047036-F48D-41E6-9233-08FB12877A70}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AYKJ.GISDevelop.Platform</RootNamespace>
+    <AssemblyName>AYKJ.GISDevelop.Platform</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ColorPicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client, Version=10.1.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Toolkit.DataSources, Version=10.1.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.PollingDuplex, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.ServiceModel.PollingDuplex.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Xml.Linq.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyLoad.cs" />
+    <Compile Include="clsThematic.cs" />
+    <Compile Include="Config\ConfigData.cs" />
+    <Compile Include="Config\ConfigManage.cs" />
+    <Compile Include="Config\Entity\AssemblyEntity.cs" />
+    <Compile Include="Config\Entity\MenuEntity.cs" />
+    <Compile Include="Config\Entity\PartEntity.cs" />
+    <Compile Include="Config\Entity\StyleEntity.cs" />
+    <Compile Include="Config\Entity\SystemEntity.cs" />
+    <Compile Include="Constant.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="IApp.cs" />
+    <Compile Include="ILayerControl.cs" />
+    <Compile Include="IMainPage.cs" />
+    <Compile Include="IPlatformControl.cs" />
+    <Compile Include="IWelcomePage.cs" />
+    <Compile Include="Part\IMobility.cs" />
+    <Compile Include="Part\IPart.cs" />
+    <Compile Include="Part\IWidgets.cs" />
+    <Compile Include="Part\PartDescriptor.cs" />
+    <Compile Include="PFApp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\WcfXmlService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ToolKit\Ajax.cs" />
+    <Compile Include="ToolKit\AykjToolTipService.cs" />
+    <Compile Include="ToolKit\ToolKitExtentLayer\ArcGISTiledLayerForBaidu.cs" />
+    <Compile Include="ToolKit\ToolKitExtentLayer\ArcGISTiledLayerForTDT.cs" />
+    <Compile Include="ToolKit\ToolKitExtentLayer\ToolKitForNonArcGISLayer.cs" />
+    <Compile Include="ToolKit\ToolKitMessage\PMTWindow.xaml.cs">
+      <DependentUpon>PMTWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolKit\ToolKitPrint\clsMapExportToImage.cs" />
+    <Compile Include="ToolKit\ToolKitPrint\clsPngEncoder.cs" />
+    <Compile Include="ToolKit\ColorPickerWin.xaml.cs">
+      <DependentUpon>ColorPickerWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolKit\CookieOperater.cs" />
+    <Compile Include="ToolKit\CursorEx.cs" />
+    <Compile Include="ToolKit\DrawTool.cs" />
+    <Compile Include="ToolKit\Extensions.cs" />
+    <Compile Include="ToolKit\ToolKitActiveScroll\IScrollable.cs" />
+    <Compile Include="ToolKit\ToolKitMessage\Message.cs" />
+    <Compile Include="ToolKit\ToolKitMessage\MessageWindow.xaml.cs">
+      <DependentUpon>MessageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolKit\ToolKitActiveScroll\MouseWheelSupportAddOn.cs" />
+    <Compile Include="ToolKit\WaitAnimationWindow.xaml.cs">
+      <DependentUpon>WaitAnimationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolKit\WebServiceTools.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ToolKit\ColorPickerWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ToolKit\ToolKitMessage\MessageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolKit\ToolKitMessage\PMTWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ToolKit\WaitAnimationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WcfXmlService\Service1.wsdl" />
+    <None Include="Service References\WcfXmlService\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfXmlService\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WcfXmlService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WcfXmlService\Service1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WcfXmlService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WcfXmlService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WcfXmlService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

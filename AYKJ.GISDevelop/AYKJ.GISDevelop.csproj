@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{76053B62-A665-4955-8051-4BCE962C6167}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AYKJ.GISDevelop</RootNamespace>
+    <AssemblyName>AYKJ.GISDevelop</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>zh-Hans</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>AYKJ.GISDevelop.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>AYKJ.GISDevelop.App</SilverlightAppEntry>
+    <TestPageFileName>AYKJ.GISDevelopTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Divelements.SilverlightTools">
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\Divelements.SilverlightTools.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client">
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\ESRI.ArcGIS.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Toolkit, Version=10.1.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\ESRI.ArcGIS.Client.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\Microsoft.CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing">
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.ComponentModel.DataAnnotations.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Json, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Extensions, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.ServiceModel.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.PollingDuplex, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.ServiceModel.PollingDuplex.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="system">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit">
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Input.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Input.Toolkit">
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Navigation, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Navigation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit">
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\System.Windows.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit.Internals">
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\System.Windows.Controls.Toolkit.Internals.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Browser">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Xml.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Serialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Xml.Serialization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ControlHtmlHost.xaml.cs">
+      <DependentUpon>ControlHtmlHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\BarArea.xaml.cs">
+      <DependentUpon>BarArea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\BookMark.xaml.cs">
+      <DependentUpon>BookMark.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ChildDevelop.xaml.cs">
+      <DependentUpon>ChildDevelop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Identify.xaml.cs">
+      <DependentUpon>Identify.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Legend.xaml.cs">
+      <DependentUpon>Legend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\MagnifyGlass.xaml.cs">
+      <DependentUpon>MagnifyGlass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Measure.xaml.cs">
+      <DependentUpon>Measure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\MouseCoordinate.xaml.cs">
+      <DependentUpon>MouseCoordinate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\OverView.xaml.cs">
+      <DependentUpon>OverView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\SetCoordinate.xaml.cs">
+      <DependentUpon>SetCoordinate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ThematicLayerControl.xaml.cs">
+      <DependentUpon>ThematicLayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\MapNavControl.xaml.cs">
+      <DependentUpon>MapNavControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prosess.xaml.cs">
+      <DependentUpon>Prosess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AykjDataServiceInner\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AykjDataService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AykjRealData\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ContrastService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SwfWindow.xaml.cs">
+      <DependentUpon>SwfWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="ControlHtmlHost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\BarArea.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\BookMark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\ChildDevelop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Identify.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Legend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\MagnifyGlass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Measure.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\MouseCoordinate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\OverView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\SetCoordinate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\ThematicLayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\MapNavControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Prosess.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SwfWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WelcomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISDevelop.AykjDataServiceInner.addNewSqlDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISDevelop.AykjDataServiceInner.commitConcertPlotResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISDevelop.AykjDataServiceInner.deleteSqlDataByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISDevelop.AykjDataServiceInner.GetAllDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISDevelop.AykjDataServiceInner.GetContrastDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISDevelop.AykjDataServiceInner.GetCrossDomainAPIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISDevelop.AykjDataServiceInner.getDataLocationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISDevelop.AykjDataServiceInner.getGridInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISDevelop.AykjDataServiceInner.updateConcertPlotResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\WebServicePort.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\WebServiceService.wsdl" />
+    <None Include="Service References\AykjDataService\AYKJ.GISDevelop.AykjDataService.addNewSqlDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataService\AYKJ.GISDevelop.AykjDataService.commitConcertPlotResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataService\AYKJ.GISDevelop.AykjDataService.deleteSqlDataByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataService\AYKJ.GISDevelop.AykjDataService.GetAllDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataService\AYKJ.GISDevelop.AykjDataService.GetContrastDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataService\AYKJ.GISDevelop.AykjDataService.GetCrossDomainAPIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataService\AYKJ.GISDevelop.AykjDataService.getDataLocationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataService\AYKJ.GISDevelop.AykjDataService.getGridInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataService\AYKJ.GISDevelop.AykjDataService.updateConcertPlotResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataService\WebServicePort1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AykjDataService\WebServiceService1.wsdl" />
+    <None Include="Service References\AykjRealData\AYKJ.GISDevelop.AykjRealData.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjRealData\configuration91.svcinfo" />
+    <None Include="Service References\AykjRealData\configuration.svcinfo" />
+    <None Include="Service References\AykjRealData\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AykjRealData\Service11.disco" />
+    <None Include="Service References\AykjDataServiceInner\configuration91.svcinfo" />
+    <None Include="Service References\AykjDataServiceInner\configuration.svcinfo" />
+    <None Include="Service References\AykjDataServiceInner\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ContrastService\ContrastService.disco" />
+    <None Include="Service References\ContrastService\configuration91.svcinfo" />
+    <None Include="Service References\ContrastService\configuration.svcinfo" />
+    <None Include="Service References\ContrastService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\AykjRealData\Service11.wsdl" />
+    <None Include="Service References\AykjRealData\Service111.wsdl" />
+    <None Include="Service References\AykjRealData\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AykjRealData\Service131.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AykjRealData\Service132.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContrastService\ContrastService.wsdl" />
+    <None Include="Service References\ContrastService\ContrastService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContrastService\ContrastService1.wsdl" />
+    <None Include="Service References\ContrastService\ContrastService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AykjDataServiceInner\" />
+    <WCFMetadataStorage Include="Service References\AykjDataService\" />
+    <WCFMetadataStorage Include="Service References\AykjRealData\" />
+    <WCFMetadataStorage Include="Service References\ContrastService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AykjDataService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AykjDataService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AykjDataService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AYKJ.GISDevelop.Platform\AYKJ.GISDevelop.Platform.csproj">
+      <Project>{D1047036-F48D-41E6-9233-08FB12877A70}</Project>
+      <Name>AYKJ.GISDevelop.Platform</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AYKJ.GISExtension\AYKJ.GISExtension.csproj">
+      <Project>{1654941e-dd18-4332-8efe-db1e0863d5cc}</Project>
+      <Name>AYKJ.GISExtension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AYKJ.GISInterface\AYKJ.GISInterface.csproj">
+      <Project>{f15af49f-cc29-4a97-a05e-27f9c63e33b5}</Project>
+      <Name>AYKJ.GISInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,23 @@
+<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:ee="http://schemas.microsoft.com/expression/2010/effects"
+    mc:Ignorable="d">
+	 <!-- 应用中心资源字典样式开头-->
+	<System:String x:Key="User_NickName">用户名：</System:String>
+	<System:String x:Key="User_No" xml:space="preserve">编  号：</System:String>
+	<System:String x:Key="User_Sex" xml:space="preserve">性  别：</System:String>
+	<System:String x:Key="User_Title">称谓：</System:String>
+	<System:String x:Key="User_Type">类型：</System:String>
+	<System:String x:Key="User_Email">Email：</System:String>
+
+    <System:String x:Key="webClientDownError">远程请求出错，最有可能的原因是网络故障，安全策略限制或服务为启动！</System:String>
+    <System:String x:Key="webClientResultError">远程返回的数据解析未成功，最有可能的原因是未返回任何值，数据结构发生变化！</System:String>
+    <System:String x:Key="webClientResultNull">远程返回的数据解析未成功，接口未返回任何值！</System:String>
+    <System:String x:Key="webClientResultValue">远程返回的数据解析未成功，最有可能的原因是数据结构发生了变化或格式错误！</System:String>
+    <System:String x:Key="NotKnow">未知异常！</System:String>
+</ResourceDictionary>

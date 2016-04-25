@@ -1,0 +1,23 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="Service1Soap" maxBufferSize="2147483647" maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="WebServicePortBinding" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:26011/Service1.asmx" binding="basicHttpBinding"
+                bindingConfiguration="Service1Soap" contract="AykjCreateShp.Service1Soap"
+                name="Service1Soap" />
+            <endpoint address="http://10.0.0.163:8016/jnws/WebServicePort"
+                binding="basicHttpBinding" bindingConfiguration="WebServicePortBinding"
+                contract="AykjDataServiceInner.AykjData" name="WebServicePort" />
+        </client>
+    </system.serviceModel>
+</configuration>

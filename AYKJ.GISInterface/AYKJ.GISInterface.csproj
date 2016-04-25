@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F15AF49F-CC29-4A97-A05E-27F9C63E33B5}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AYKJ.GISInterface</RootNamespace>
+    <AssemblyName>AYKJ.GISInterface</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\Parts\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AYKJ.GPS">
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\AYKJ.GPS.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ColorPicker">
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\ColorPicker.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client, Version=10.1.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\ESRI.ArcGIS.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Toolkit, Version=10.1.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\ESRI.ArcGIS.Client.Toolkit.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Samples">
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\ESRI.ArcGIS.Samples.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing">
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\Microsoft.Expression.Drawing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\Microsoft.Expression.Interactions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="SLVisifire.Charts">
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\SLVisifire.Charts.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.ComponentModel.DataAnnotations.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Json, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Data.Input.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AYKJ.GISDevelop.Web\ClientBin\Assembly\System\System.Windows.Interactivity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Xml.Linq.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\AdvAPP\AccidentSimulation.xaml.cs">
+      <DependentUpon>AccidentSimulation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AdvAPP\AutoAllSearch.xaml.cs">
+      <DependentUpon>AutoAllSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AdvAPP\AutoSearch.xaml.cs">
+      <DependentUpon>AutoSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AdvAPP\DataTools.xaml.cs">
+      <DependentUpon>DataTools.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AdvAPP\EvacuationRoute.xaml.cs">
+      <DependentUpon>EvacuationRoute.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AdvAPP\AddPointWithLoc.xaml.cs">
+      <DependentUpon>AddPointWithLoc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\LeakModel\LeakModelPage.xaml.cs">
+      <DependentUpon>LeakModelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Statistic\StatisticPage.xaml.cs">
+      <DependentUpon>StatisticPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AykjCreateShp\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AykjDataServiceInner\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ToolKit\ChildPage\ChildRealTime.xaml.cs">
+      <DependentUpon>ChildRealTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolKit\ChildPage\RoundSlider.cs" />
+    <Compile Include="ToolKit\ChildPage\WindPage.xaml.cs">
+      <DependentUpon>WindPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolKit\Leak\clsContinuousLeak.cs" />
+    <Compile Include="ToolKit\Leak\clsExplosionLeak.cs" />
+    <Compile Include="ToolKit\Leak\clsFireLeak.cs" />
+    <Compile Include="ToolKit\Leak\clsInstantaneousLeak.cs" />
+    <Compile Include="ToolKit\Query\clsRangeQuery.cs" />
+    <Compile Include="ToolKit\Query\clsRangeQueryExtension.cs" />
+    <Compile Include="ToolKit\Query\clswxy.cs" />
+    <Compile Include="ToolKit\Route\clsAutoSearch.cs" />
+    <Compile Include="ToolKit\Route\clsCircleRouteAnalysis.cs" />
+    <Compile Include="ToolKit\Route\clsCircleSafePoint.cs" />
+    <Compile Include="ToolKit\Route\clsContinueRouteAnalysis.cs" />
+    <Compile Include="ToolKit\Route\clsContinueSafePoint.cs" />
+    <Compile Include="ToolKit\Route\clsEscapeRoute.cs" />
+    <Compile Include="ToolKit\Route\clsInstantaneousRouteAnalysis.cs" />
+    <Compile Include="ToolKit\Route\clsInstantaneousSafePoint.cs" />
+    <Compile Include="ToolKit\Route\clsRescueRoute.cs" />
+    <Compile Include="ToolKit\Route\clsAutoAllSearch.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Control\AdvAPP\AccidentSimulation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\AdvAPP\AutoAllSearch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\AdvAPP\AutoSearch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\AdvAPP\DataTools.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\AdvAPP\EvacuationRoute.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\AdvAPP\AddPointWithLoc.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\LeakModel\LeakModelPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Statistic\StatisticPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ToolKit\ChildPage\ChildRealTime.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ToolKit\ChildPage\WindPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AykjCreateShp\AYKJ.GISInterface.AykjCreateShp.ToShpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjCreateShp\Service1.wsdl" />
+    <None Include="Service References\AykjCreateShp\Service1.disco" />
+    <None Include="Service References\AykjCreateShp\configuration91.svcinfo" />
+    <None Include="Service References\AykjCreateShp\configuration.svcinfo" />
+    <None Include="Service References\AykjCreateShp\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISInterface.AykjDataServiceInner.addNewSqlDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISInterface.AykjDataServiceInner.commitConcertPlotResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISInterface.AykjDataServiceInner.deleteSqlDataByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISInterface.AykjDataServiceInner.GetAllDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISInterface.AykjDataServiceInner.getCardPersonFromSqlServerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISInterface.AykjDataServiceInner.GetContrastDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISInterface.AykjDataServiceInner.GetCrossDomainAPIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISInterface.AykjDataServiceInner.getDataLocationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISInterface.AykjDataServiceInner.getGridInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISInterface.AykjDataServiceInner.getSeniorInfoFromSqlServerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISInterface.AykjDataServiceInner.getStatusDataFromSqlServerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\AYKJ.GISInterface.AykjDataServiceInner.updateConcertPlotResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\WebServicePort.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AykjDataServiceInner\WebServiceService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AykjCreateShp\" />
+    <WCFMetadataStorage Include="Service References\AykjDataServiceInner\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AykjDataServiceInner\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AykjDataServiceInner\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AykjDataServiceInner\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AYKJ.GISDevelop.Platform\AYKJ.GISDevelop.Platform.csproj">
+      <Project>{D1047036-F48D-41E6-9233-08FB12877A70}</Project>
+      <Name>AYKJ.GISDevelop.Platform</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\AYKJ.GISExtension\AYKJ.GISExtension.csproj">
+      <Project>{1654941E-DD18-4332-8EFE-DB1E0863D5CC}</Project>
+      <Name>AYKJ.GISExtension</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

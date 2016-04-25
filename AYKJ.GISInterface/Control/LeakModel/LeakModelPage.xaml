@@ -1,0 +1,250 @@
+﻿<UserControl x:Class="AYKJ.GISInterface.LeakModelPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:Symbols="clr-namespace:ESRI.ArcGIS.Client.Symbols;assembly=ESRI.ArcGIS.Client" 
+    xmlns:esriConvert="clr-namespace:ESRI.ArcGIS.Client.ValueConverters;assembly=ESRI.ArcGIS.Client"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <!--<esriConvert:DictionaryConverter x:Key="dictConverter"/>-->
+        <Symbols:MarkerSymbol x:Name="TxtSymbol" OffsetY="74" >
+            <Symbols:MarkerSymbol.ControlTemplate>
+                <ControlTemplate>
+                    <Grid x:Name="grid"  HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                        <Path Width="30" Height="30" Canvas.Left="94.5" Canvas.Top="44.0833" Stretch="Fill" StrokeLineJoin="Round" Data="F1 M 134.75,44.5833L 95,109.083L 161.75,44.5834" VerticalAlignment="Bottom" HorizontalAlignment="Left" UseLayoutRounding="False" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" Fill="Black" Stroke="#FFFF008C" StrokeThickness="0"/>
+                        <Border HorizontalAlignment="Left" Width="18" Margin="0,0,0,29" Background="Black" BorderBrush="#FFFF008C" BorderThickness="0"/>
+                        <Border Margin="18,0,0,29" Width="12" HorizontalAlignment="Left" Background="Black" BorderBrush="#FFFF008C" BorderThickness="0"/>
+                        <Border Margin="29,0,0,29" Background="Black" BorderBrush="#FFFF008C" BorderThickness="0"/>
+                        <Grid Margin="5,5,5,35" VerticalAlignment="Center">
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="5,3,5,0" HorizontalAlignment="Left">
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding Attributes[StaType]}" Foreground="#FFFFF9F9" HorizontalAlignment="Left" FontFamily="NSimSun" FontSize="12"/>
+                                    <TextBlock TextWrapping="Wrap" Text=":" Foreground="#FFFFF9F9" HorizontalAlignment="Left" FontFamily="NSimSun" FontSize="12"/>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding Attributes[StaNum]}" Foreground="#FFFFF9F9" HorizontalAlignment="Left" FontFamily="NSimSun" FontSize="12"/>
+                                    <TextBlock TextWrapping="Wrap" Text="米" Foreground="#FFFFF9F9" HorizontalAlignment="Left" FontFamily="NSimSun" FontSize="12"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="5,3,5,0" HorizontalAlignment="Left">
+                                    <TextBlock TextWrapping="Wrap" Text="面积" Foreground="#FFFFF9F9" HorizontalAlignment="Left" FontFamily="NSimSun" FontSize="12"/>
+                                    <TextBlock TextWrapping="Wrap" Text=":" Foreground="#FFFFF9F9" HorizontalAlignment="Left" FontFamily="NSimSun" FontSize="12"/>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding Attributes[StaArea]}" Foreground="#FFFFF9F9" HorizontalAlignment="Left" FontFamily="NSimSun" FontSize="12"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Symbols:MarkerSymbol.ControlTemplate>
+        </Symbols:MarkerSymbol>
+        
+        <Symbols:MarkerSymbol x:Name="ConcentricCircleSymbol" OffsetY="68" >
+            <Symbols:MarkerSymbol.ControlTemplate>
+                <ControlTemplate>
+                    <Grid x:Name="grid" MaxWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Path Width="30" Height="30" Canvas.Left="94.5" Canvas.Top="44.0833" Stretch="Fill" StrokeLineJoin="Round" Data="F1 M 134.75,44.5833L 95,109.083L 161.75,44.5834" VerticalAlignment="Bottom" HorizontalAlignment="Left" UseLayoutRounding="False" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" Fill="Black" Stroke="Black"/>
+                        <Border HorizontalAlignment="Left" Width="18" Margin="0,0,0,29" BorderThickness="1,1,0,1" Background="Black" BorderBrush="Black"/>
+                        <Border Margin="18,0,0,29" Width="12" HorizontalAlignment="Left" BorderThickness="0,1" BorderBrush="Black" Background="Black"/>
+                        <Border Margin="29,0,0,29" Background="Black" BorderBrush="Black" BorderThickness="0,1,1,1"/>
+                        <Grid Margin="5,5,5,35" VerticalAlignment="Center">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" Margin="0" HorizontalAlignment="Stretch" Height="14">
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding Attributes[StaLenType]}" Foreground="#FFFFF9F9" HorizontalAlignment="Left" FontFamily="NSimSun" FontSize="12"/>
+                                    <TextBlock TextWrapping="Wrap" Text=":" Foreground="#FFFFF9F9" HorizontalAlignment="Left" FontFamily="NSimSun" FontSize="12"/>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding Attributes[StaLenNum]}" Foreground="#FFFFF9F9" HorizontalAlignment="Left" FontFamily="NSimSun" FontSize="12"/>
+                                    <TextBlock TextWrapping="Wrap" Text="米" Foreground="#FFFFF9F9" HorizontalAlignment="Left" FontFamily="NSimSun" FontSize="12"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" Margin="0" HorizontalAlignment="Stretch" Height="14">
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding Attributes[StaAreaType]}" Foreground="#FFFFF9F9" HorizontalAlignment="Left" FontFamily="NSimSun" FontSize="12"/>
+                                    <TextBlock TextWrapping="Wrap" Text=":" Foreground="#FFFFF9F9" HorizontalAlignment="Left" FontFamily="NSimSun" FontSize="12"/>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding Attributes[StaAreaNum]}" Foreground="#FFFFF9F9" HorizontalAlignment="Left" FontFamily="NSimSun" FontSize="12"/>
+                                    <TextBlock TextWrapping="Wrap" Text="平方米" Foreground="#FFFFF9F9" HorizontalAlignment="Left" FontFamily="NSimSun" FontSize="12"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Symbols:MarkerSymbol.ControlTemplate>
+        </Symbols:MarkerSymbol>
+
+        <Symbols:MarkerSymbol x:Name="FireSymbol" OffsetX="0" OffsetY="0">
+            <Symbols:MarkerSymbol.ControlTemplate>
+                <ControlTemplate>
+                    <Grid >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="MouseOver"/>
+                                <VisualState x:Name="Normal">
+                                    <Storyboard   RepeatBehavior="ForEver">
+                                        <DoubleAnimation BeginTime="0" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" From="1" To="10" Duration="00:00:01" />
+                                        <DoubleAnimation BeginTime="0" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" From="1" To="10" Duration="00:00:01" />
+                                        <DoubleAnimation BeginTime="0" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.Opacity)" From="1" To="0" Duration="00:00:01" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Ellipse Height="10" Width="10"  HorizontalAlignment="Left" VerticalAlignment="Top"  RenderTransformOrigin="0.5,0.5" x:Name="ellipse" IsHitTestVisible="False" Margin="-5,-5,0,0">
+                            <Ellipse.RenderTransform>
+                                <ScaleTransform />
+                            </Ellipse.RenderTransform>
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#00FF0000" />
+                                    <GradientStop Color="#FFFF0000" Offset="0.25" />
+                                    <GradientStop Color="#00FF0000" Offset="0.5" />
+                                    <GradientStop Color="#FFFF0000" Offset="0.75" />
+                                    <GradientStop Color="#00FF0000" Offset="1" />
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <Ellipse Height="10" Width="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-5,-5,0,0" Fill="#FFFF0000" x:Name="ellipse1" />
+                        <Image Source="/Image/LeakModel/Fire.png" Margin="-16,-16,0,0" />
+                    </Grid>
+                </ControlTemplate>
+            </Symbols:MarkerSymbol.ControlTemplate>
+        </Symbols:MarkerSymbol>
+
+        <Symbols:MarkerSymbol x:Name="ExplosionSymbol" OffsetX="0" OffsetY="0">
+            <Symbols:MarkerSymbol.ControlTemplate>
+                <ControlTemplate>
+                    <Grid >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="MouseOver"/>
+                                <VisualState x:Name="Normal">
+                                    <Storyboard   RepeatBehavior="ForEver">
+                                        <DoubleAnimation BeginTime="0" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" From="1" To="10" Duration="00:00:01" />
+                                        <DoubleAnimation BeginTime="0" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" From="1" To="10" Duration="00:00:01" />
+                                        <DoubleAnimation BeginTime="0" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.Opacity)" From="1" To="0" Duration="00:00:01" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Ellipse Height="10" Width="10"  HorizontalAlignment="Left" VerticalAlignment="Top"  RenderTransformOrigin="0.5,0.5" x:Name="ellipse" IsHitTestVisible="False" Margin="-5,-5,0,0">
+                            <Ellipse.RenderTransform>
+                                <ScaleTransform />
+                            </Ellipse.RenderTransform>
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#00FF0000" />
+                                    <GradientStop Color="#FFFF0000" Offset="0.25" />
+                                    <GradientStop Color="#00FF0000" Offset="0.5" />
+                                    <GradientStop Color="#FFFF0000" Offset="0.75" />
+                                    <GradientStop Color="#00FF0000" Offset="1" />
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <Ellipse Height="10" Width="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-5,-5,0,0" Fill="#FFFF0000" x:Name="ellipse1" />
+                        <Image Source="/Image/LeakModel/Explode.png" Margin="-15,-9,0,0" />
+                    </Grid>
+                </ControlTemplate>
+            </Symbols:MarkerSymbol.ControlTemplate>
+        </Symbols:MarkerSymbol>
+
+        <Symbols:LineSymbol x:Name="RescueRouteLineStyle">
+            <!--使用 ControlTemplate 自定义线要素的外观-->
+            <Symbols:LineSymbol.ControlTemplate>
+                <ControlTemplate xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows">
+                    <Grid>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Normal">
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimation BeginTime="0:0:0" Storyboard.TargetName="Element" Storyboard.TargetProperty="StrokeDashOffset" To="-1000" Duration="0:3:0" />
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Path x:Name="Element" StrokeDashArray="5,2" StrokeDashOffset="0"  StrokeThickness="{Binding Path=Attributes[mWidth]}" Stroke="{Binding Path=Attributes[mColor]}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Symbols:LineSymbol.ControlTemplate>
+        </Symbols:LineSymbol>
+
+        <Symbols:LineSymbol x:Name="EscapeRouteLineStyle">
+            <!--使用 ControlTemplate 自定义线要素的外观-->
+            <Symbols:LineSymbol.ControlTemplate>
+                <ControlTemplate xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows">
+                    <Grid>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Normal">
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimation BeginTime="0:0:0" Storyboard.TargetName="Element" Storyboard.TargetProperty="StrokeDashOffset" To="-1000" Duration="0:3:0" />
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Path x:Name="Element" StrokeDashArray="5,2" StrokeDashOffset="0"  StrokeThickness="{Binding Path=Attributes[mWidth]}" Stroke="{Binding Path=Attributes[mColor]}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Symbols:LineSymbol.ControlTemplate>
+        </Symbols:LineSymbol>
+
+        <Symbols:MarkerSymbol x:Name="RouteSymbol" OffsetX="0" OffsetY="0">
+            <Symbols:MarkerSymbol.ControlTemplate>
+                <ControlTemplate>
+                    <Grid >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="MouseOver"/>
+                                <VisualState x:Name="Normal">
+                                    <Storyboard   RepeatBehavior="ForEver">
+                                        <DoubleAnimation BeginTime="0" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" From="1" To="10" Duration="00:00:01" />
+                                        <DoubleAnimation BeginTime="0" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" From="1" To="10" Duration="00:00:01" />
+                                        <DoubleAnimation BeginTime="0" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.Opacity)" From="1" To="0" Duration="00:00:01" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Ellipse Height="10" Width="10"  HorizontalAlignment="Left" VerticalAlignment="Top"  RenderTransformOrigin="0.5,0.5" x:Name="ellipse" IsHitTestVisible="False" Margin="0,0,0,0">
+                            <Ellipse.RenderTransform>
+                                <ScaleTransform />
+                            </Ellipse.RenderTransform>
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#000000aa" />
+                                    <GradientStop Color="#AA0000aa" Offset="0.25" />
+                                    <GradientStop Color="#000000aa" Offset="0.5" />
+                                    <GradientStop Color="#AA0000aa" Offset="0.75" />
+                                    <GradientStop Color="#000000aa" Offset="1" />
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                        <Image Source="{Binding Path=Attributes[mTypeImg]}" Margin="-5,-5,0,0" />
+                    </Grid>
+                </ControlTemplate>
+            </Symbols:MarkerSymbol.ControlTemplate>
+        </Symbols:MarkerSymbol>
+
+        <Symbols:FillSymbol x:Name="ContinueSymbol">
+            <Symbols:FillSymbol.ControlTemplate >
+                <ControlTemplate xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows">
+                    <Grid>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Normal">
+                                    <Storyboard RepeatBehavior="ForEver">
+                                        <DoubleAnimation BeginTime="0" Storyboard.TargetName="Element" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Offset)" To="1" Duration="00:00:02.5" />
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Path x:Name="Element" StrokeThickness="0" Fill="{Binding Attributes[StaFill]}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Symbols:FillSymbol.ControlTemplate>
+        </Symbols:FillSymbol>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="White">
+    	<StackPanel HorizontalAlignment="Right" VerticalAlignment="Top">
+    		<Button x:Name="btn_Explosion" Content="爆炸模拟" Click="btn_Explosion_Click" FontFamily="NSimSun" FontSize="12" Margin="0,5,0,0"/>
+    		<Button x:Name="btn_Fire" Content="火灾模拟" Click="btn_Fire_Click" FontFamily="NSimSun" FontSize="12" Margin="0,5,0,0"/>
+    		<Button x:Name="btn_InstantaneousLeak" Click="btn_InstantaneousLeak_Click" Content="瞬时泄漏模拟" FontFamily="NSimSun" FontSize="12" Margin="0,5,0,0"/>
+    		<Button x:Name="btn_ContinuousLeak" Click="btn_ContinuousLeak_Click"  Content="连续泄漏模拟" FontFamily="NSimSun" FontSize="12" Margin="0,5,0,0"/>
+    		<Button x:Name="btn_EscapeRoute" Click="btn_EscapeRoute_Click" Content="最短逃生路径" FontFamily="NSimSun" FontSize="12" Margin="0,5,0,0"/>
+    		<Button x:Name="btn_RescuePath" Click="btn_RescuePath_Click" Content="最短救援路径" FontFamily="NSimSun" FontSize="12" Margin="0,5,0,0"/>
+    	</StackPanel>
+
+    </Grid>
+</UserControl>
